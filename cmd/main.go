@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"github.com/subediaakash/search-engine/internal/document"
+	"github.com/subediaakash/search-engine/internal/tokenizer"
 )
 
 func main() {
@@ -13,10 +14,11 @@ func main() {
 	}
 	for _, doc := range docs {
 
-		fmt.Println("ID:", doc.Id)
-		fmt.Println("Name:", doc.Name)
-		fmt.Println(doc.Content)
-		fmt.Println("----------------")
+		// print tokens from each docs
+		words := tokenizer.Tokenize(doc.Content)
+		fmt.Println("Tokens : ", words)
+		fmt.Println("------------------")
+
 	}
 
 }
