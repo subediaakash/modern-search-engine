@@ -4,21 +4,36 @@ import (
 	"fmt"
 
 	"github.com/subediaakash/search-engine/internal/document"
-	"github.com/subediaakash/search-engine/internal/tokenizer"
+	"github.com/subediaakash/search-engine/internal/index"
 )
 
 func main() {
-	docs, err := document.LoadDocument("files")
+
+	// index logic
+	// For every document
+
+	// Create empty seen map
+
+	// Tokenize the document
+
+	// Remove stop words
+
+	// For every word
+
+	//     If already seen
+
+	//         continue
+
+	//     Append document ID
+
+	// Mark as seen
+	idx := index.New()
+
+	documents, err := document.LoadDocument("files")
 	if err != nil {
-		panic(err)
+		return
 	}
-	for _, doc := range docs {
-
-		// print tokens from each docs
-		words := tokenizer.Tokenize(doc.Content)
-		fmt.Println("Tokens : ", words)
-		fmt.Println("------------------")
-
-	}
+	idx.Build(documents)
+	fmt.Println(idx.Words)
 
 }
