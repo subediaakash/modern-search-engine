@@ -5,6 +5,7 @@ import (
 
 	"github.com/subediaakash/search-engine/internal/document"
 	"github.com/subediaakash/search-engine/internal/index"
+	"github.com/subediaakash/search-engine/internal/search"
 )
 
 func main() {
@@ -34,6 +35,10 @@ func main() {
 		return
 	}
 	idx.Build(documents)
-	fmt.Println(idx.Words)
+	// fmt.Println(idx.Words)
+
+	results := search.Search(idx, "world")
+
+	fmt.Println(results)
 
 }
