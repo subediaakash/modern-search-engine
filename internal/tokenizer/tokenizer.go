@@ -24,3 +24,9 @@ func Tokenize(text string) []string {
 
 	return words
 }
+
+func Analyze(text string) []string {
+	words := Tokenize(text)
+	filteredWords := RemoveStopWords(words)
+	return filteredWords
+}

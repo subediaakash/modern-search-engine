@@ -7,7 +7,7 @@ import (
 )
 
 func Search(idx *index.InvertedIndex, query string) []int {
-	words := tokenizer.Tokenize(query)
+	words := tokenizer.Analyze(query)
 	// check for some cheeky users entering "" as query
 	if len(words) == 0 {
 		return []int{}

@@ -38,6 +38,9 @@ func main() {
 	// fmt.Println(idx.Words)
 
 	results := search.Search(idx, "world")
+	for _, docID := range results {
+		fmt.Println(idx.Documents[docID].Name)
+	}
 
 	fmt.Println(results)
 
